@@ -1,0 +1,115 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+    <!-- content -->
+    <div class="app-content-body">
+        <div class="bg-light lter b-b wrapper-md">
+            <h1 class="m-n font-thin h3">人员录入</h1>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                {#                人员录入表单#}
+                <form class="form-horizontal" method="post">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="input-id-1">姓名</label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" id="input-id-1">
+                        </div>
+                    </div>
+                    <div class="line line-dashed b-b line-lg pull-in"></div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">性别</label>
+                        <div class="col-sm-5">
+                            <div id="sex" class="radio">
+                                <label class="i-checks">
+                                    <input type="radio" name="sex" value="M">
+                                    <i></i>
+                                    男
+                                </label>
+                                <label class="i-checks">
+                                    <input type="radio" name="sex" value="F">
+                                    <i></i>
+                                    女
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="line line-dashed b-b line-lg pull-in"></div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">部门选择</label>
+                        <div class="col-sm-5">
+                            <select name="department" id="department" class="form-control m-b" onchange="changeVal(this.value)">
+                                {% for depart in departs %}
+                                    <option value="{{ depart.department_name }}">{{ depart.department_name }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">职位选择</label>
+                        <div class="col-sm-5">
+                            <select name="duty" id="duty" class="form-control m-b">
+                                {% for duty in dutys %}
+                                    <option value="{{ duty.duty_name }}">{{ duty.duty_name }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="line line-dashed b-b line-lg pull-in"></div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="input-id-1">登录账号</label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" id="input-id-1">
+                        </div>
+                    </div>
+                    <div class="line line-dashed b-b line-lg pull-in"></div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">登录密码</label>
+                        <div class="col-sm-5">
+                            <input type="password" name="password" class="form-control">
+                        </div>
+                    </div>
+                    <div class="line line-dashed b-b line-lg pull-in"></div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="input-id-1">姓名</label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" id="input-id-1">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- / content -->
+
+{% endblock %}
+
+{% block js %}
+    <script>
+        {#    根据 部门 通过 AJAX 从后台获取职位#}
+        function changeVal(value) {
+            $.ajax({
+                url: "{% url 'add_staff' '?' %}",
+                data: {departname: value, csrfmiddlewaretoken: {{ csrf_token }}},
+                type: "GET",
+                success: function (result) {
+                    $("#duty option").remove();
+                    if(result.status == "success") {
+                        var selectDuty = $("#duty");
+                        if (result.dutys.length > 0) {
+                            for (var i = 0; i < result.dutys.length; ++i) {
+                                selectDuty.append("<option>" + result.dutys[i].duty_name + "</option>");
+                            }
+                        }
+                    }else{
+                        sweetAlert("失败!", result.msg, "error");
+                    }
+                },
+                error: function () {
+                    sweetAlert("失败!", "执行错误!", "error");
+                }
+            });
+        }
+    </script>
+{% endblock %}

@@ -57,14 +57,16 @@ class StaffView(LoginRequiredMixin, View):
                 sex = request.POST.get('sex', None)
                 phone = request.POST.get('phone', None)
                 staff_name = request.POST.get('staff_name', None)
+                departname = request.POST.get('department', '领导')
+                dutyname = request.POST.get('duty', '董事')
 
                 department = Department()
-                department.department_name = "领导"
+                department.department_name = departname
                 department.save()
 
                 duty = Duty()
                 duty.department = department
-                duty.duty_name = "董事"
+                duty.duty_name = dutyname
                 duty.save()
 
                 staff = Staff()
@@ -78,9 +80,9 @@ class StaffView(LoginRequiredMixin, View):
                 staff.is_staff = True
                 staff.save()
 
-                return render(request, '', {})
+                return HttpResponse(json.dumps({"status": "success", "msg": "添加用户成功"}), content_type="application/json")
             else:
-                return render(request, '', {})
+                return HttpResponse(json.dumps({"status": "fail", "msg": "添加用户失败"}), content_type="application/json")
         except Exception as e:
             return HttpResponse(json.dumps({"status": "fail", "msg": "添加用户失败"}), content_type="application/json")
 
@@ -168,3 +170,18 @@ class DepartsDutysView(View):
 
     def post(self, request):
         return HttpResponse(json.dumps({"status": "success", "msg": "删除成功"}), content_type="application/json")
+
+
+class AddStaffView(View):
+    def get(self, request, value):
+        try:
+            if value == "所有":
+                all_departs = Department.objects.all()
+                dutys = Duty.objects.filter(department__department_name=all_departs[0].department_name)
+                return render(request, 'add_staffs.html', {"departs": all_departs, "dutys": dutys})
+            else:
+                departname = request.GET.get('departname', None)
+                dutys = Duty.objects.filter(department__department_name=departname)
+                return HttpResponse(json.dumps({"status": "success", "dutys": dutys}), content_type="application/jsons")
+        except Exception as e:
+            return render(request, 'add_staffs.html', {})
