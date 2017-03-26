@@ -1,0 +1,137 @@
+
+{% extends 'index.html' %}
+<!-- content -->
+
+{% block content %}
+
+    <div class="app-content-body">
+        <div>
+            <div class="col2 bg-light lter b-b wrapper-md">
+                <h1 class="m-n font-thin h3">{{ deptname }}人员</h1>
+            </div>
+        </div>
+        <div>
+            选择查看层级:
+            <select onchange="select(this.value)">
+                <option value="所有" {% ifequal department "所有" %}
+                        selected="selected"
+                {% endifequal %}
+                >所有</option>
+                {% for department in departments %}
+                    <option value="{{ department.department_name }}"
+                            {% ifequal deptname department.department_name %}
+                            selected="selected"
+                            {% endifequal %} >
+                        {{ department.department_name }}
+                    </option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="wrapper-md">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <table class="table table-hover" data-toggle="table">
+                                <thead>
+                                <tr>
+                                    <th class="text-center" style="width:20%">姓名</th>
+                                    <th class="text-center" style="width:10%">性别</th>
+                                    <th class="text-center" style="width:30%">部门</th>
+                                    <th class="text-center" style="width:15%">职位</th>
+                                    <th class="text-center" style="width:15%">状态</th>
+                                    <th class="text-center" style="width:10%">操作</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for staff in staffs.object_list %}
+                                    <tr>
+                                        <td class="text-center">{{ staff.staff_name }}</td>
+                                        <td class="text-center">{% if staff.sex == "M" %}男{% else %}女{% endif %}</td>
+                                        <td class="text-center">{{ staff.duty.department.department_name }}</td>
+                                        <td class="text-center">{{ staff.duty.duty_name }}</td>
+                                        <td class="text-center">
+                                            {% if staff.is_active %}
+                                                在职
+                                            {% else %}
+                                                离职
+                                            {% endif %}
+                                        </td>
+                                        <td class="text-center">
+                                            {% if not request.user.staff.duty.department.id > staff.duty.department.id %}
+                                                <a class="btn btn-xs btn-info" onclick="#">查看</a>
+                                            {% endif %}
+                                            {% if not request.user.staff.duty.department.id > staff.duty.department.id %}
+                                                <a class="btn btn-xs btn-danger" onclick="#">删除</a>
+                                            {% endif %}
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                            <!-- 分页 -->
+                            <nav>
+                                <ul class="pagination pagination-sm">
+                                    {% if staffs.has_previous %}
+                                        <li>
+                                            <a>
+                                                <span>上一页</span>
+                                            </a>
+                                        </li>
+                                    {% else %}
+                                        <li class="hidden">
+                                            <a>
+                                                <span>上一页</span>
+                                            </a>
+                                        </li>
+                                    {% endif %}
+
+                                    {% for page in staffs.pages %}
+                                        {% if page %}
+                                            {% ifequal page staffs.number %}
+                                                <li class="active">
+                                                    <a href="#">{{ page }}</a>
+                                                </li>
+                                            {% else %}
+                                                <li>
+                                                    <a href="#">{{ page }}</a>
+                                                </li>
+                                            {% endifequal %}
+
+                                        {% endif %}
+                                    {% endfor %}
+
+                                    {% if staffs.has_next %}
+                                        <li>
+                                            <a>
+                                                <span>下一页</span>
+                                            </a>
+                                        </li>
+                                    {% else %}
+                                        <li class="hidden">
+                                            <a>
+                                                <span>下一页</span>
+                                            </a>
+                                        </li>
+                                    {% endif %}
+
+                                </ul>
+                            </nav>
+                            <!-- / 分页 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
+
+{% block js %}
+    <script>
+        function select(value) {
+            location.href = "/index/staffs/"+value+"/";
+        }
+    </script>
+{% endblock %}
