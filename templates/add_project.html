@@ -1,0 +1,116 @@
+{% extends 'index.html' %}
+{% load staticfiles %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap-datetimepicker.min.css' %}" type="text/css"/>
+{% endblock %}
+
+{% block content %}
+
+    <!-- content -->
+    <div class="app-content-body">
+        <div class="bg-light lter b-b wrapper-md">
+            <h1 class="m-n font-thin h3">工程录入</h1>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                {#                人员录入表单#}
+                <form class="form-horizontal" method="post" id="regist_form">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="input-id-1">工程名称</label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" name="project_id">
+                        </div>
+                    </div>
+                    <div class="line line-dashed b-b line-lg pull-in"></div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">工程负责人</label>
+                        <div class="col-sm-5">
+                            <select name="head" class="form-control">
+                                {% for staff in staffs %}
+                                    <option value="{{ staff.staff_name }}">{{ staff.staff_name }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="line line-dashed b-b line-lg pull-in"></div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="input-id-1">工程开始日期</label>
+                        <div class=" col-sm-5">
+                            <div class="input-group date form_date">
+                                <input type="text" class="form-control" name="start_date" readonly>
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="line line-dashed b-b line-lg pull-in"></div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="input-id-1">工程结束日期</label>
+                        <div class=" col-sm-5">
+                            <div class="input-group date form_date">
+                                <input type="text" class="form-control" name="end_date" readonly>
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="line line-dashed b-b line-lg pull-in"></div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="input-id-1"></label>
+                        <div class="col-sm-5 text-center">
+                            <button class="btn btn-info btn-bg" id="add_project" type="button">添加工程</button>
+                        </div>
+                    </div>
+                    {% csrf_token %}
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- / content -->
+
+{% endblock %}
+
+{% block js %}
+    <script src="{% static 'js/bootstrap-datetimepicker.min.js' %}"></script>
+    <script src="{% static 'js/locales/bootstrap-datetimepicker.zh-CN.js' %}"></script>
+    <script>
+        $('.form_date').datetimepicker({
+            language:  'zh-CN',
+            weekStart: 1,
+            todayBtn:  1,
+            autoclose: 1,
+            todayHighlight: 1,
+            startView: 2,
+            minView: 2,
+            forceParse: 0,
+            format: 'yyyy-mm-dd',
+            showMeridian: 1
+        });
+
+        // 用户注册
+        $("#add_project").click(function () {
+            $.ajax({
+                cache: false,
+                type: "POST",
+                url:'{% url 'project_add' %}',
+                data:$("#regist_form").serialize(),
+                async: true,
+                success: function (result) {
+                    if(result.status == "success") {
+                        swal({
+                                title: "操作成功",
+                                text: result.msg,
+                                type:"success",
+                                timer: 1000,
+                                showConfirmButton: false},
+                            function () {
+                                location.href = '{% url 'project_add' %}';
+                            }
+                        );
+                    }else{
+                        sweetAlert("操作失败", result.msg, "error");
+                    }
+                }
+            });
+        });
+    </script>
+{% endblock %}

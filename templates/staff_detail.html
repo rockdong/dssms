@@ -1,0 +1,145 @@
+{% extends 'index.html' %}
+{% load staticfiles %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap-datetimepicker.min.css' %}" type="text/css"/>
+{% endblock %}
+
+{% block content %}
+
+    <!-- content -->
+    <div class="app-content-body">
+        <div class="bg-light lter b-b wrapper-md">
+            <h1 class="m-n font-thin h3">{{ staff.staff_name }} 个人信息</h1>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-sm-4 col-sm-offset-4">
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">用户名</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" readonly type="text" value="{{ staff.username }}">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">部门</label>
+                                <div class="col-sm-10">
+                                    <select class="form-control">
+                                        {% for foo in staff %}
+                                        
+                                        {% endfor %}
+                                        
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">职位</label>
+                                <div class="col-sm-10">
+                                    <select class="form-control">
+                                        <option></option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">生日</label>
+                                <div class=" col-sm-10">
+                                    <div class="input-group date form_date">
+                                        <input type="text" class="form-control" name="birthday" value="{{ staff.birthday | date:'Y-m-d' }}" readonly>
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">手机</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" type="text" value="{{ staff.phone }}">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-12 text-right">
+                                    <button class="btn btn-info">修改</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- / content -->
+
+{% endblock %}
+
+{% block js %}
+    <script src="{% static 'js/bootstrap-datetimepicker.min.js' %}"></script>
+    <script src="{% static 'js/locales/bootstrap-datetimepicker.zh-CN.js' %}"></script>
+    <script>
+        {#    根据 部门 通过 AJAX 从后台获取职位#}
+        function changeVal(value) {
+            $.ajax({
+                url: "{% url 'add_staff' '?' %}",
+                data: {departname: value},
+                type: "GET",
+                success: function (result) {
+                    $("#duty option").remove();
+                    if(result.status == "success") {
+                        dutysJson = JSON.parse(result.dutys);
+                        var selectDuty = $("#duty");
+                        if (dutysJson.length > 0) {
+                            for (var i = 0; i < dutysJson.length; ++i) {
+                                selectDuty.append("<option>" + dutysJson[i].fields.duty_name + "</option>");
+                            }
+                        }
+                    }else{
+                        sweetAlert("失败!", result.msg, "error");
+                    }
+                },
+                error: function () {
+                    sweetAlert("失败!", "执行错误!", "error");
+                }
+            });
+        }
+
+        $('.form_date').datetimepicker({
+            language:  'zh-CN',
+            weekStart: 1,
+            todayBtn:  1,
+            autoclose: 1,
+            todayHighlight: 1,
+            startView: 2,
+            minView: 2,
+            forceParse: 0,
+            format: 'yyyy-mm-dd',
+            showMeridian: 1
+        });
+
+        // 用户注册
+        $("#add_staff").click(function () {
+            $.ajax({
+                cache: false,
+                type: "POST",
+                url:'{% url 'add_staff' '?' %}',
+                data:$("#regist_form").serialize(),
+                async: true,
+                success: function (result) {
+                    if(result.status == "success") {
+                        swal({
+                                title: "操作成功",
+                                text: result.msg,
+                                type:"success",
+                                timer: 2000,
+                                showConfirmButton: false},
+                            function () {
+                                location.href = '{% url 'add_staff' '所有' %}';
+                            }
+                        );
+                    }else{
+                        sweetAlert("操作失败", result.msg, "error");
+                    }
+                }
+            });
+        });
+    </script>
+{% endblock %}

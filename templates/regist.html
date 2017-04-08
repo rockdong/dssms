@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="{% static 'css/simple-line-icons.css' %}" type="text/css" />
     <link rel="stylesheet" href="{% static 'css/font.css' %}" type="text/css" />
     <link rel="stylesheet" href="{% static 'css/app.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'css/bootstrap-datetimepicker.min.css' %}" type="text/css"/>
+    <link href="{% static 'css/sweetalert.css' %}" rel="stylesheet"/>
 </head>
 <body>
 
@@ -23,7 +25,7 @@
             <div class="wrapper text-center">
                 <strong>公司注册</strong>
             </div>
-            <form name="form" action="{% url 'register' %}" class="form-validation" method="post">
+            <form name="form" class="form-validation" method="post" id="regist_form">
                 {% csrf_token %}
                 <div class="text-danger wrapper text-center error">
                 </div>
@@ -50,10 +52,28 @@
                             </label>
                         </div>
                     </div>
+                    <div class="list-group-item">
+                        <div class="input-group date form_date {% if register_form.errors.birthday %}
+                            has-error
+                        {% endif %}">
+                            <input type="text" placeholder="生日" class="form-control" name="birthday" readonly>
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                        </div>
+                    </div>
                     <div class="list-group-item {% if register_form.errors.phone %}
                         has-error
                     {% endif %}">
                         <input name="phone" placeholder="手机号码" class="form-control {% if login_form.errors.phone %}no-border{% endif %}" value="{{ register_form.phone.value }}">
+                    </div>
+                    <div class="list-group-item {% if register_form.errors.department %}
+                        has-error
+                    {% endif %}">
+                        <input name="department" placeholder="部门名称" class="form-control {% if login_form.errors.department %}no-border{% endif %}" value="{{ register_form.department.value }}">
+                    </div>
+                    <div class="list-group-item {% if register_form.errors.duty_name %}
+                        has-error
+                    {% endif %}">
+                        <input name="duty_name" placeholder="职位名称" class="form-control {% if login_form.errors.duty_name %}no-border{% endif %}" value="{{ register_form.duty_name.value }}">
                     </div>
                     <div class="list-group-item {% if register_form.errors.username %}
                         has-error
@@ -66,10 +86,10 @@
                         <input name="password" type="password" placeholder="登陆密码" class="form-control {% if login_form.errors.password %}no-border{% endif %} value="{{ register_form.password.value }}"" >
                     </div>
                 </div>
-                <button type="submit" class="btn btn-lg btn-primary btn-block">注册</button>
+                <button type="button" class="btn btn-lg btn-primary btn-block" id="add_staff">注册</button>
                 <div class="line line-dashed"></div>
                 <p class="text-center"><small>已经注册了公司账号?</small></p>
-                <a ui-sref="access.signin" class="btn btn-lg btn-default btn-block" href="{% url 'login' %}">登陆</a>
+                <a class="btn btn-lg btn-default btn-block" href="{% url 'login' %}">登陆</a>
             </form>
         </div>
         <div class="text-center">
@@ -84,4 +104,48 @@
 </body>
 <script src="{% static 'js/jquery.min.js' %}"></script>
 <script src="{% static 'js/bootstrap.js' %}"></script>
+<script src="{% static 'js/bootstrap-datetimepicker.min.js' %}"></script>
+<script src="{% static 'js/locales/bootstrap-datetimepicker.zh-CN.js' %}"></script>
+<script src="{% static 'js/sweetalert.min.js' %}"></script>
+<script>
+    $('.form_date').datetimepicker({
+        language:  'zh-CN',
+        weekStart: 1,
+        todayBtn:  1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        minView: 2,
+        forceParse: 0,
+        format: 'yyyy-mm-dd',
+        showMeridian: 1
+    });
+
+    // 用户注册
+    $("#add_staff").click(function () {
+        $.ajax({
+            cache: false,
+            type: "POST",
+            url:{% url 'register' %},
+            data:$("#regist_form").serialize(),
+            async: true,
+            success: function (result) {
+                if(result.status == "success") {
+                    swal({
+                            title: "操作成功",
+                            text: result.msg,
+                            type:"success",
+                            timer: 2000,
+                            showConfirmButton: false},
+                        function () {
+                            location.href = '{% url 'login' %}';
+                        }
+                    );
+                }else{
+                    location.href = '{% url 'register' %}';
+                }
+            }
+        });
+    });
+</script>
 </html>

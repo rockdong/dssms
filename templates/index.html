@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="{% static 'js/datatables/dataTables.bootstrap.css' %}" type="text/css" />
     <link rel="stylesheet" href="{% static 'js/footable/footable.core.css' %}" type="text/css" />
     <link rel="stylesheet" href="{% static 'js/jvectormap/jquery-jvectormap.css' %}" type="text/css" />
-
+    <link href="{% static 'css/sweetalert.css' %}" rel="stylesheet"/>
     {% block css %}
 
     {% endblock %}
@@ -161,8 +161,13 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a name="departs_dutys" href="{% url 'departs_dutys' %}">
+                                    <a name="departs" href="{% url 'departs' %}">
                                         <span>查看部门/职位信息</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a name="project" href="{% url 'project' %}">
+                                        <span>查看工程信息</span>
                                     </a>
                                 </li>
                             </ul>
@@ -300,8 +305,8 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a name="form_element" href="#">
-                                        <span>Form elements</span>
+                                    <a name="project_add" href="{% url 'project_add' %}">
+                                        <span>工程信息添加</span>
                                     </a>
                                 </li>
                             </ul>
@@ -392,8 +397,6 @@
     <div id="content" class="app-content" role="main">
         {% block content %}
             <div class="app-content-body ">
-
-
                 <div class="hbox hbox-auto-xs hbox-auto-sm">
                     <!-- main -->
                     <div class="col">
@@ -773,6 +776,7 @@
 <script src="{% static 'js/datatables/jquery.dataTables.min.js' %}"></script>
 <script src="{% static 'js/datatables/dataTables.bootstrap.js' %}"></script>
 <script src="{% static 'js/footable/footable.all.min.js' %}"></script>
+<script src="{% static 'js/sweetalert.min.js' %}"></script>
 {% block js %}
 
 

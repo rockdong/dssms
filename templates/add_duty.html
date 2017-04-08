@@ -1,8 +1,5 @@
 {% extends 'index.html' %}
 {% load staticfiles %}
-{% block css %}
-    <link href="{% static 'css/sweetalert.css' %}" rel="stylesheet"/>
-{% endblock %}
 
 {% block content %}
     <!-- content -->
@@ -19,7 +16,7 @@
                         <div class="col-sm-5">
                             <select name="department" id="department" class="form-control m-b" onchange="change(this.value)">
                                 {% for department in depts %}
-                                    <option {% if dept = department.department_name %}
+                                    <option {% if dept == department.department_name %}
                                         selected="selected"
                                     {% endif %} value="{{ department.department_name }}">{{ department.department_name }}</option>
                                 {% endfor %}
@@ -60,7 +57,10 @@
                     </h6>
                 </div>
                 <div class="modal-body">
-                    <input id="deptname" class="form-control"/>
+                    <input id="deptname" placeholder="部门名称" class="form-control"/>
+                </div>
+                <div class="modal-body">
+                    <input id="dept_level" placeholder="部门级别" class="form-control"/>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">关闭
@@ -85,7 +85,7 @@
                     </h6>
                 </div>
                 <div class="modal-body">
-                    <input id="dutyname" class="form-control"/>
+                    <input id="dutyname" placeholder="职位名称" class="form-control"/>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">关闭
@@ -102,33 +102,34 @@
 <!-- / content -->
 
 {% block js %}
-    <script src="{% static 'js/sweetalert.min.js' %}"></script>
     <script>
         function add() {
             var duty_name = $("#dutyname").val();
             var depart_name = "";
+            var dept_level = "";
 
             // 如果 职位名称为空，代表添加的是部门名称
             if( duty_name == "" ) {
                 depart_name = $("#deptname").val();
+                dept_level = $("#dept_level").val();
             }else{
                 depart_name = $("#department").val();
             }
 
             $.ajax({
                 url: "{% url 'depart_duty' '?' %}",
-                data: {departmentname:depart_name, dutyname:duty_name, csrfmiddlewaretoken: '{{ csrf_token }}'},
+                data: {departmentname:depart_name, depart_level:dept_level, dutyname:duty_name, csrfmiddlewaretoken: '{{ csrf_token }}'},
                 type: "POST",
                 success: function (result) {
                     if(result.status == "fail") {
                         sweetAlert("操作失败", result.msg, "error");
                     }else{
                         swal({
-                            title: "操作成功",
-                            text: result.msg,
-                            type:"success",
-                            timer: 2000,
-                            showConfirmButton: false},
+                                title: "操作成功",
+                                text: result.msg,
+                                type:"success",
+                                timer: 2000,
+                                showConfirmButton: false},
                             function () {
                                 location.href = "/index/depart_duty/所有/";
                             }

@@ -12,7 +12,8 @@ class Department(models.Model):
     """
     Description: 部门，用来定义公司的组织架构，目前只支持一层架构
     """
-    department_name = models.CharField(max_length=50, null=False, blank=False, primary_key=True, verbose_name='部门名称')
+    department_name = models.CharField(max_length=50, null=False, blank=False, verbose_name='部门名称')
+    depart_level = models.IntegerField(default=0, verbose_name='部门级别')
 
     class Meta:
         verbose_name = '部门'
@@ -27,7 +28,7 @@ class Duty(models.Model):
     Description: 部门下面的职位
     """
     department = models.ForeignKey(Department, verbose_name='部门')
-    duty_name = models.CharField(primary_key=True, max_length=20, verbose_name='职位名称')
+    duty_name = models.CharField(max_length=20, verbose_name='职位名称')
 
     class Meta:
         verbose_name = '职位名称'

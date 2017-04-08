@@ -1,4 +1,9 @@
 {% extends 'index.html' %}
+{% load staticfiles %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap-datetimepicker.min.css' %}" type="text/css"/>
+{% endblock %}
 
 {% block content %}
 
@@ -10,11 +15,11 @@
         <div class="panel panel-default">
             <div class="panel-body">
                 {#                人员录入表单#}
-                <form class="form-horizontal" method="post">
+                <form class="form-horizontal" method="post" id="regist_form">
                     <div class="form-group">
                         <label class="col-sm-2 control-label" for="input-id-1">姓名</label>
                         <div class="col-sm-5">
-                            <input type="text" class="form-control" id="input-id-1">
+                            <input type="text" class="form-control" name="staff_name">
                         </div>
                     </div>
                     <div class="line line-dashed b-b line-lg pull-in"></div>
@@ -37,6 +42,23 @@
                     </div>
                     <div class="line line-dashed b-b line-lg pull-in"></div>
                     <div class="form-group">
+                        <label class="col-sm-2 control-label" for="input-id-1">生日</label>
+                        <div class=" col-sm-5">
+                            <div class="input-group date form_date">
+                                <input type="text" class="form-control" name="birthday" readonly>
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="line line-dashed b-b line-lg pull-in"></div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="input-id-1">电话</label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" name="phone">
+                        </div>
+                    </div>
+                    <div class="line line-dashed b-b line-lg pull-in"></div>
+                    <div class="form-group">
                         <label class="col-sm-2 control-label">部门选择</label>
                         <div class="col-sm-5">
                             <select name="department" id="department" class="form-control m-b" onchange="changeVal(this.value)">
@@ -49,7 +71,7 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">职位选择</label>
                         <div class="col-sm-5">
-                            <select name="duty" id="duty" class="form-control m-b">
+                            <select name="duty_name" id="duty" class="form-control m-b">
                                 {% for duty in dutys %}
                                     <option value="{{ duty.duty_name }}">{{ duty.duty_name }}</option>
                                 {% endfor %}
@@ -60,7 +82,7 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label" for="input-id-1">登录账号</label>
                         <div class="col-sm-5">
-                            <input type="text" class="form-control" id="input-id-1">
+                            <input type="text" class="form-control" name="username">
                         </div>
                     </div>
                     <div class="line line-dashed b-b line-lg pull-in"></div>
@@ -72,11 +94,12 @@
                     </div>
                     <div class="line line-dashed b-b line-lg pull-in"></div>
                     <div class="form-group">
-                        <label class="col-sm-2 control-label" for="input-id-1">姓名</label>
-                        <div class="col-sm-5">
-                            <input type="text" class="form-control" id="input-id-1">
+                        <label class="col-sm-2 control-label" for="input-id-1"></label>
+                        <div class="col-sm-5 text-center">
+                            <button class="btn btn-info btn-bg" id="add_staff" type="button">添加人员</button>
                         </div>
                     </div>
+                    {% csrf_token %}
                 </form>
             </div>
         </div>
@@ -86,20 +109,23 @@
 {% endblock %}
 
 {% block js %}
+    <script src="{% static 'js/bootstrap-datetimepicker.min.js' %}"></script>
+    <script src="{% static 'js/locales/bootstrap-datetimepicker.zh-CN.js' %}"></script>
     <script>
         {#    根据 部门 通过 AJAX 从后台获取职位#}
         function changeVal(value) {
             $.ajax({
                 url: "{% url 'add_staff' '?' %}",
-                data: {departname: value, csrfmiddlewaretoken: {{ csrf_token }}},
+                data: {departname: value},
                 type: "GET",
                 success: function (result) {
                     $("#duty option").remove();
                     if(result.status == "success") {
+                        dutysJson = JSON.parse(result.dutys);
                         var selectDuty = $("#duty");
-                        if (result.dutys.length > 0) {
-                            for (var i = 0; i < result.dutys.length; ++i) {
-                                selectDuty.append("<option>" + result.dutys[i].duty_name + "</option>");
+                        if (dutysJson.length > 0) {
+                            for (var i = 0; i < dutysJson.length; ++i) {
+                                selectDuty.append("<option>" + dutysJson[i].fields.duty_name + "</option>");
                             }
                         }
                     }else{
@@ -111,5 +137,45 @@
                 }
             });
         }
+
+        $('.form_date').datetimepicker({
+            language:  'zh-CN',
+            weekStart: 1,
+            todayBtn:  1,
+            autoclose: 1,
+            todayHighlight: 1,
+            startView: 2,
+            minView: 2,
+            forceParse: 0,
+            format: 'yyyy-mm-dd',
+            showMeridian: 1
+        });
+
+        // 用户注册
+        $("#add_staff").click(function () {
+            $.ajax({
+                cache: false,
+                type: "POST",
+                url:'{% url 'add_staff' '?' %}',
+                data:$("#regist_form").serialize(),
+                async: true,
+                success: function (result) {
+                    if(result.status == "success") {
+                        swal({
+                                title: "操作成功",
+                                text: result.msg,
+                                type:"success",
+                                timer: 2000,
+                                showConfirmButton: false},
+                            function () {
+                                location.href = '{% url 'add_staff' '所有' %}';
+                            }
+                        );
+                    }else{
+                        sweetAlert("操作失败", result.msg, "error");
+                    }
+                }
+            });
+        });
     </script>
 {% endblock %}

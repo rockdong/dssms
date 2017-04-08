@@ -7,7 +7,7 @@
     <div class="app-content-body">
         <div>
             <div class="col2 bg-light lter b-b wrapper-md">
-                <h1 class="m-n font-thin h3">部门/职位</h1>
+                <h1 class="m-n font-thin h3">部门</h1>
             </div>
         </div>
         <div class="wrapper-md">
@@ -18,81 +18,76 @@
                             <table class="table table-hover" data-toggle="table">
                                 <thead>
                                 <tr>
-                                    <th class="text-center" style="width:40%">部门</th>
-                                    <th class="text-center" style="width:40%">职位</th>
+                                    <th class="text-center" style="width:20%">部门</th>
+                                    <th class="text-center" style="width:60%"></th>
                                     <th class="text-center" style="width:20%">操作</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                {% for duty in dutys.object_list %}
+                                {% for depart in departs.object_list %}
                                     <tr>
-                                    {% if duty == Department %}
-                                        <td class="text-center">{{ duty.department_name }}</td>
-                                    {% else %}
-                                        <td class="text-center">{{ duty.department.department_name }}</td>
-                                    {% endif %}
-
-                                    {% if duty == Duty %}
-                                        <td class="text-center">{{ duty.duty_name }}</td>
-                                    {% else %}
-                                        <td class="text-center"></td>
-                                    {% endif %}
+                                        <td class="text-center">{{ depart.department_name }}</td>
                                         <td class="text-center">
-                                            <a class="btn btn-xs btn-info" onclick="#">查看</a>
-                                            <a class="btn btn-xs btn-danger" onclick="#">删除</a>
+                                        </td>
+                                        <td class="text-center">
+                                            <button class="btn btn-xs btn-warning" name="{{ depart.department_name }}">修改</button>
+                                            <button class="btn btn-xs btn-info" name="{{ depart.department_name }}">查看</button>
+                                            <button class="btn btn-xs btn-danger" id="delete" name="{{ depart.department_name }}">删除</button>
                                         </td>
                                     </tr>
                                 {% endfor %}
                                 </tbody>
                             </table>
                             <!-- 分页 -->
-                            <nav>
-                                <ul class="pagination pagination-sm">
-                                    {% if dutys.has_previous %}
-                                        <li>
-                                            <a>
-                                                <span>上一页</span>
-                                            </a>
-                                        </li>
-                                    {% else %}
-                                        <li class="hidden">
-                                            <a>
-                                                <span>上一页</span>
-                                            </a>
-                                        </li>
-                                    {% endif %}
-
-                                    {% for page in dutys.pages %}
-                                        {% if page %}
-                                            {% ifequal page dutys.number %}
-                                                <li class="active">
-                                                    <a href="#">{{ page }}</a>
-                                                </li>
-                                            {% else %}
-                                                <li>
-                                                    <a href="#">{{ page }}</a>
-                                                </li>
-                                            {% endifequal %}
-
+                            <footer class="panel-footer">
+                                <div class="col-sm-12 text-right text-center-xs">
+                                    <ul class="pagination pagination-sm m-t-none m-b-none">
+                                        {% if departs.has_previous %}
+                                            <li>
+                                                <a href="?{{ departs.previous_page_number.querystring }}">
+                                                    <i class="fa fa-chevron-left"></i>
+                                                </a>
+                                            </li>
+                                        {% else %}
+                                            <li class="disabled">
+                                                <a>
+                                                    <i class="fa fa-chevron-left"></i>
+                                                </a>
+                                            </li>
                                         {% endif %}
-                                    {% endfor %}
 
-                                    {% if dutys.has_next %}
-                                        <li>
-                                            <a>
-                                                <span>下一页</span>
-                                            </a>
-                                        </li>
-                                    {% else %}
-                                        <li class="hidden">
-                                            <a>
-                                                <span>下一页</span>
-                                            </a>
-                                        </li>
-                                    {% endif %}
+                                        {% for page in departs.pages %}
+                                            {% if page %}
+                                                {% ifequal page departs.number %}
+                                                    <li class="active">
+                                                        <a href="?{{ page.querystring }}">{{ page }}</a>
+                                                    </li>
+                                                {% else %}
+                                                    <li>
+                                                        <a href="?{{ page.querystring }}">{{ page }}</a>
+                                                    </li>
+                                                {% endifequal %}
 
-                                </ul>
-                            </nav>
+                                            {% endif %}
+                                        {% endfor %}
+
+                                        {% if departs.has_next %}
+                                            <li>
+                                                <a href="?{{ departs.next_page_number.querystring }}">
+                                                    <i class="fa fa-chevron-right"></i>
+                                                </a>
+                                            </li>
+                                        {% else %}
+                                            <li class="disabled">
+                                                <a>
+                                                    <i class="fa fa-chevron-right"></i>
+                                                </a>
+                                            </li>
+                                        {% endif %}
+
+                                    </ul>
+                                </div>
+                            </footer>
                             <!-- / 分页 -->
                         </div>
                     </div>
@@ -101,4 +96,91 @@
         </div>
     </div>
 
+{% endblock %}
+
+{% block js %}
+    <script>
+        $(".btn-info").click(function () {
+            var name = this.getAttribute("name");
+            location.href = "/index/dept_detail/" + name + "/";
+        });
+
+        $(".btn-danger").click(function () {
+            var depart_name = this.getAttribute("name");
+            $.ajax({
+                url:'{% url 'departs'%}',
+                data:{method: "delete", depart_name: depart_name, csrfmiddlewaretoken: '{{ csrf_token }}'},
+                type:"POST",
+                success: function (result) {
+                    if(result.status == "success") {
+                        swal({
+                                title: "操作成功",
+                                text: result.msg,
+                                type:"success",
+                                timer: 2000,
+                                showConfirmButton: false},
+                            function () {
+                                location.href = "/index/departs/";
+                            }
+                        );
+                    }else{
+                        sweetAlert("错误!", result.msg, "error");
+                    }
+                },
+                error: function (result) {
+                    sweetAlert("失败!", "执行错误!", "error");
+                }
+            });
+        });
+
+        $(".btn-warning").click(function () {
+            var org_depart_name = this.getAttribute("name");
+            swal({
+                    title: "部门名称修改",
+                    text: "请输入新的部门名称:",
+                    type: "input",
+                    showCancelButton: true,
+                    closeOnConfirm: false,
+                    confirmButtonText: "确定",
+                    cancelButtonText: "取消",
+                    inputPlaceholder: "新部门名称"
+                },
+                function(inputValue){
+                    if (inputValue === false)
+                        return false;
+                    if (inputValue === "") {
+                        swal.showInputError("请输入新部门名称!");
+                        return false;
+                    }
+                    if (org_depart_name===inputValue) {
+                        swal.showInputError("请输入不同的部门名称!");
+                        return false;
+                    }
+                    $.ajax({
+                        url:'{% url 'departs'%}',
+                        data:{method: "modify", org_depart_name: org_depart_name, depart_name: inputValue, csrfmiddlewaretoken: '{{ csrf_token }}'},
+                        type:"POST",
+                        success: function (result) {
+                            if(result.status == "success") {
+                                swal({
+                                        title: "操作成功",
+                                        text: result.msg,
+                                        type:"success",
+                                        timer: 2000,
+                                        showConfirmButton: false},
+                                    function () {
+                                        location.href = "/index/departs/";
+                                    }
+                                );
+                            }else{
+                                sweetAlert("错误!", result.msg, "error");
+                            }
+                        },
+                        error: function (result) {
+                            sweetAlert("失败!", "执行错误!", "error");
+                        }
+                    });
+                });
+        });
+    </script>
 {% endblock %}

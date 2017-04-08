@@ -1,10 +1,14 @@
 # _*_coding:utf-8 _*_
 
 from django.shortcuts import render
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.hashers import make_password
 from django.views.generic import View
+
+import json
+import datetime
+
 from company.forms import LoginForm, RegisterForm
 
 from utils.mixin_utils import LoginRequiredMixin
@@ -60,35 +64,48 @@ class RegisterView(View):
             return render(request, 'regist.html', {})
 
     def post(self, request):
-        register_form = RegisterForm(request.POST)
-        if register_form.is_valid():
-            username = request.POST.get('username', None)
-            password = request.POST.get('password', None)
-            sex = request.POST.get('sex', None)
-            phone = request.POST.get('phone', None)
-            staff_name = request.POST.get('staff_name', None)
+        # 如果成功，刷新页面，如果失败，弹出对话框
+        try:
+            register_form = RegisterForm(request.POST)
+            if register_form.is_valid():
+                username = request.POST.get('username', None)
+                password = request.POST.get('password', None)
+                sex = request.POST.get('sex', None)
+                phone = request.POST.get('phone', None)
+                staff_name = request.POST.get('staff_name', None)
+                departname = request.POST.get('department', None)
+                dutyname = request.POST.get('duty_name', None)
+                birthday = request.POST.get('birthday', None)
 
-            department = Department()
-            department.department_name = "领导"
-            department.save()
+                department = Department()
+                department.department_name = departname
+                department.save()
 
-            duty = Duty()
-            duty.department = department
-            duty.duty_name = "董事"
-            duty.save()
+                duty = Duty()
+                duty.department = department
+                duty.duty_name = dutyname
+                duty.save()
 
-            staff = Staff()
-            staff.duty = duty
-            staff.staff_name = staff_name
-            staff.sex = sex
-            staff.phone = phone
-            staff.username = username
-            staff.password = make_password(password)
-            staff.is_active = True
-            staff.is_staff = True
-            staff.is_superuser = True
-            staff.save()
+                staff = Staff()
+                staff.duty = duty
+                staff.staff_name = staff_name
+                staff.sex = sex
+                staff.phone = phone
+                staff.username = username
+                staff.birthday = datetime.datetime.strptime(birthday,'%Y-%m-%d')
+                staff.password = make_password(password)
+                staff.is_active = True
+                staff.is_staff = True
 
-            return render(request, "login.html", {'has_superuser': True})
-        else:
-            return render(request, 'regist.html', {"register_form":register_form})
+                if Staff.objects.filter(is_superuser=True):
+                    staff.is_superuser = False
+                else:
+                    staff.is_superuser = True
+
+                staff.save()
+
+                return HttpResponse(json.dumps({"status": "success", "msg": "添加用户成功"}), content_type="application/json")
+            else:
+                return render(request, 'regist.html', {"register_form": register_form})
+        except Exception as e:
+            return render(request, 'regist.html', {"register_form": register_form})

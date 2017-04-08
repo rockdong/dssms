@@ -10,23 +10,6 @@
                 <h1 class="m-n font-thin h3">{{ deptname }}人员</h1>
             </div>
         </div>
-        <div>
-            选择查看层级:
-            <select onchange="select(this.value)">
-                <option value="所有" {% ifequal department "所有" %}
-                        selected="selected"
-                {% endifequal %}
-                >所有</option>
-                {% for department in departments %}
-                    <option value="{{ department.department_name }}"
-                            {% ifequal deptname department.department_name %}
-                            selected="selected"
-                            {% endifequal %} >
-                        {{ department.department_name }}
-                    </option>
-                {% endfor %}
-            </select>
-        </div>
         <div class="wrapper-md">
             <div class="row">
                 <div class="col-lg-12">
@@ -59,10 +42,10 @@
                                         </td>
                                         <td class="text-center">
                                             {% if not request.user.staff.duty.department.id > staff.duty.department.id %}
-                                                <a class="btn btn-xs btn-info" onclick="#">查看</a>
+                                                <button class="btn btn-xs btn-info" name="{{ staff.id }}">查看</button>
                                             {% endif %}
-                                            {% if not request.user.staff.duty.department.id > staff.duty.department.id %}
-                                                <a class="btn btn-xs btn-danger" onclick="#">删除</a>
+                                            {% if request.user.duty.department.depart_level < staff.duty.department.depart_level %}
+                                                <button class="btn btn-xs btn-danger" name="{{ staff.id }}">删除</button>
                                             {% endif %}
                                         </td>
                                     </tr>
@@ -70,59 +53,83 @@
                                 </tbody>
                             </table>
                             <!-- 分页 -->
-                            <nav>
-                                <ul class="pagination pagination-sm">
-                                    {% if staffs.has_previous %}
-                                        <li>
-                                            <a>
-                                                <span>上一页</span>
-                                            </a>
-                                        </li>
-                                    {% else %}
-                                        <li class="hidden">
-                                            <a>
-                                                <span>上一页</span>
-                                            </a>
-                                        </li>
-                                    {% endif %}
+                            <footer class="panel-footer">
+                                <div class="row">
+                                    <div class="col-sm-4 hidden-xs">
+                                        <span class="text-primary">选择部门:</span>
+                                        <select class="input-sm form-control w-sm inline v-middle" onchange="select(this.value)">
+                                            <option value="所有" {% ifequal department "所有" %}
+                                                    selected="selected"
+                                            {% endifequal %}
+                                            >所有</option>
+                                            {% for department in departments %}
+                                                <option value="{{ department.department_name }}"
+                                                        {% ifequal deptname department.department_name %}
+                                                        selected="selected"
+                                                        {% endifequal %} >
+                                                    {{ department.department_name }}
+                                                </option>
+                                            {% endfor %}
+                                        </select>
 
-                                    {% for page in staffs.pages %}
-                                        {% if page %}
-                                            {% ifequal page staffs.number %}
-                                                <li class="active">
-                                                    <a href="#">{{ page }}</a>
+                                    </div>
+
+                                    <div class="col-sm-8 text-right text-center-xs">
+                                        <ul class="pagination pagination-sm m-t-none m-b-none">
+                                            {% if staffs.has_previous %}
+                                                <li>
+                                                    <a href="?{{ staffs.previous_page_number.querystring }}">
+                                                        <i class="fa fa-chevron-left"></i>
+                                                    </a>
                                                 </li>
                                             {% else %}
-                                                <li>
-                                                    <a href="#">{{ page }}</a>
+                                                <li class="disabled">
+                                                    <a>
+                                                        <i class="fa fa-chevron-left"></i>
+                                                    </a>
                                                 </li>
-                                            {% endifequal %}
+                                            {% endif %}
 
-                                        {% endif %}
-                                    {% endfor %}
+                                            {% for page in staffs.pages %}
+                                                {% if page %}
+                                                    {% ifequal page staffs.number %}
+                                                        <li class="active">
+                                                            <a href="?{{ page.querystring }}">{{ page }}</a>
+                                                        </li>
+                                                    {% else %}
+                                                        <li>
+                                                            <a href="?{{ page.querystring }}">{{ page }}</a>
+                                                        </li>
+                                                    {% endifequal %}
 
-                                    {% if staffs.has_next %}
-                                        <li>
-                                            <a>
-                                                <span>下一页</span>
-                                            </a>
-                                        </li>
-                                    {% else %}
-                                        <li class="hidden">
-                                            <a>
-                                                <span>下一页</span>
-                                            </a>
-                                        </li>
-                                    {% endif %}
+                                                {% endif %}
+                                            {% endfor %}
 
-                                </ul>
-                            </nav>
-                            <!-- / 分页 -->
+                                            {% if staffs.has_next %}
+                                                <li>
+                                                    <a href="?{{ staffs.next_page_number.querystring }}">
+                                                        <i class="fa fa-chevron-right"></i>
+                                                    </a>
+                                                </li>
+                                            {% else %}
+                                                <li class="disabled">
+                                                    <a>
+                                                        <i class="fa fa-chevron-right"></i>
+                                                    </a>
+                                                </li>
+                                            {% endif %}
+
+                                        </ul>
+                                    </div>
+                            </footer>
+
                         </div>
+                        <!-- / 分页 -->
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
 
@@ -130,8 +137,45 @@
 
 {% block js %}
     <script>
+        // 选择
         function select(value) {
             location.href = "/index/staffs/"+value+"/";
         }
+
+        // 个人信息
+        $(".btn-info").click(function () {
+            var id = this.getAttribute("name")
+            location.href = "/index/staff_detail/" + id + "/"
+        });
+
+        // 删除
+        $(".btn-danger").click(function () {
+            var id = this.getAttribute("name");
+            $.ajax({
+                url: "{% url 'staffs' '?' %}",
+                type: "POST",
+                data:{id:id, csrfmiddlewaretoken: '{{ csrf_token }}'},
+                success: function (result) {
+                    if(result.status == "fail") {
+                        sweetAlert("操作失败", result.msg, "error");
+                    }else{
+                        swal({
+                                title: "操作成功",
+                                text: result.msg,
+                                type:"success",
+                                timer: 2000,
+                                showConfirmButton: false
+                            },
+                            function () {
+                                location.href = "/index/staffs/所有/";
+                            }
+                        );
+                    }
+                },
+                error: function (result) {
+                    sweetAlert("失败", "执行错误!", "error");
+                }
+            });
+        });
     </script>
 {% endblock %}

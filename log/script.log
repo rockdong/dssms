@@ -2552,3 +2552,1502 @@ Traceback (most recent call last):
   File "/Users/user/project_env/dssms_env/lib/python2.7/site-packages/django/core/urlresolvers.py", line 508, in _reverse_with_prefix
     (lookup_view_s, args, kwargs, len(patterns), patterns))
 NoReverseMatch: Reverse for 'departToDutys' with arguments '('',)' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+2017-03-26 22:47:01,071 [Thread-8:3844] [django.request:182] [base:get_response] [WARNING]- Not Found: /favicon.ico
+2017-03-26 23:01:39,437 [Thread-7:692] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /index/add_staff/所有/
+Traceback (most recent call last):
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\views\generic\base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:/python_env/dssms\operations\views.py", line 187, in get
+    return render(request, 'add_staffs.html', {})
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\loader.py", line 96, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\loader.py", line 32, in get_template
+    return engine.get_template(template_name, dirs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\backends\django.py", line 40, in get_template
+    return Template(self.engine.get_template(template_name, dirs), self)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\engine.py", line 190, in get_template
+    template, origin = self.find_template(template_name, dirs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\engine.py", line 157, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\loaders\base.py", line 46, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 189, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 231, in compile_nodelist
+    return parser.parse()
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 516, in parse
+    raise self.error(token, e)
+TemplateSyntaxError: Could not parse the remainder: '+value+"'"' from '"'"+value+"'"'
+2017-03-26 23:52:48,371 [Thread-27:7548] [django.request:182] [base:get_response] [WARNING]- Not Found: /favicon.ico
+2017-03-27 00:05:11,206 [Thread-130:13280] [django.request:182] [base:get_response] [WARNING]- Not Found: /favicon.ico
+2017-03-27 00:05:11,226 [Thread-131:13284] [django.request:182] [base:get_response] [WARNING]- Not Found: /favicon.ico
+2017-03-27 09:36:04,690 [Thread-8:10268] [django.request:182] [base:get_response] [WARNING]- Not Found: /favicon.ico
+2017-03-27 14:53:53,957 [Thread-246:6276] [django.request:103] [csrf:_reject] [WARNING]- Forbidden (CSRF token missing or incorrect.): /index/add_staff/所有/
+2017-03-27 14:54:14,802 [Thread-247:2180] [django.request:103] [csrf:_reject] [WARNING]- Forbidden (CSRF token missing or incorrect.): /index/add_staff/所有/
+2017-03-27 14:54:15,474 [Thread-248:11204] [django.request:103] [csrf:_reject] [WARNING]- Forbidden (CSRF token missing or incorrect.): /index/add_staff/所有/
+2017-03-27 14:54:15,756 [Thread-249:8980] [django.request:103] [csrf:_reject] [WARNING]- Forbidden (CSRF token missing or incorrect.): /index/add_staff/所有/
+2017-03-27 14:54:21,921 [Thread-253:11224] [django.request:103] [csrf:_reject] [WARNING]- Forbidden (CSRF token missing or incorrect.): /index/add_staff/所有/
+2017-03-27 14:54:40,947 [Thread-254:8408] [django.request:103] [csrf:_reject] [WARNING]- Forbidden (CSRF token missing or incorrect.): /index/add_staff/所有/
+2017-03-27 14:54:42,371 [Thread-255:10412] [django.request:103] [csrf:_reject] [WARNING]- Forbidden (CSRF token missing or incorrect.): /index/add_staff/所有/
+2017-03-27 15:23:28,510 [Thread-267:7088] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /index/add_staff/所有/
+Traceback (most recent call last):
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\views\generic\base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:/python_env/dssms\operations\views.py", line 188, in get
+    return render(request, 'add_staffs.html', {})
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\loader.py", line 97, in render_to_string
+    return template.render(context, request)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\backends\django.py", line 95, in render
+    return self.template.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 206, in render
+    return self._render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\loader_tags.py", line 173, in render
+    return compiled_parent._render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\loader_tags.py", line 69, in render
+    result = block.nodelist.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\defaulttags.py", line 513, in render
+    six.reraise(*exc_info)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\defaulttags.py", line 499, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+NoReverseMatch: Reverse for '' with arguments '()' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+2017-03-27 23:32:27,051 [Thread-16:2236] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /index/
+Traceback (most recent call last):
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\utils\decorators.py", line 67, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\utils\decorators.py", line 63, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "D:/python_env/dssms\utils\mixin_utils.py", line 10, in dispatch
+    return super(LoginRequiredMixin, self).dispatch(request, *args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\views\generic\base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:/python_env/dssms\operations\views.py", line 22, in get
+    return render(request, 'index.html', {})
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\loader.py", line 97, in render_to_string
+    return template.render(context, request)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\backends\django.py", line 95, in render
+    return self.template.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 206, in render
+    return self._render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\defaulttags.py", line 513, in render
+    six.reraise(*exc_info)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\defaulttags.py", line 499, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+NoReverseMatch: Reverse for 'add_staff' with arguments '(u'\u6240\u6709',)' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+2017-03-27 23:33:12,022 [Thread-17:13208] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /index/
+Traceback (most recent call last):
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\utils\decorators.py", line 67, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\utils\decorators.py", line 63, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "D:/python_env/dssms\utils\mixin_utils.py", line 10, in dispatch
+    return super(LoginRequiredMixin, self).dispatch(request, *args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\views\generic\base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:/python_env/dssms\operations\views.py", line 22, in get
+    return render(request, 'index.html', {})
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\loader.py", line 97, in render_to_string
+    return template.render(context, request)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\backends\django.py", line 95, in render
+    return self.template.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 206, in render
+    return self._render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\defaulttags.py", line 513, in render
+    six.reraise(*exc_info)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\defaulttags.py", line 499, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+NoReverseMatch: Reverse for 'add_staff' with arguments '(u'\u6240\u6709',)' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+2017-03-27 23:33:48,144 [Thread-18:12904] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /index/
+Traceback (most recent call last):
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\utils\decorators.py", line 67, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\utils\decorators.py", line 63, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "D:/python_env/dssms\utils\mixin_utils.py", line 10, in dispatch
+    return super(LoginRequiredMixin, self).dispatch(request, *args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\views\generic\base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:/python_env/dssms\operations\views.py", line 22, in get
+    return render(request, 'index.html', {})
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\loader.py", line 97, in render_to_string
+    return template.render(context, request)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\backends\django.py", line 95, in render
+    return self.template.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 206, in render
+    return self._render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\defaulttags.py", line 513, in render
+    six.reraise(*exc_info)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\defaulttags.py", line 499, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+NoReverseMatch: Reverse for 'add_staff' with arguments '(u'\u6240\u6709',)' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+2017-03-27 23:34:05,959 [Thread-22:4928] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /index/
+Traceback (most recent call last):
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\utils\decorators.py", line 67, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\utils\decorators.py", line 63, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "D:/python_env/dssms\utils\mixin_utils.py", line 10, in dispatch
+    return super(LoginRequiredMixin, self).dispatch(request, *args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\views\generic\base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:/python_env/dssms\operations\views.py", line 22, in get
+    return render(request, 'index.html', {})
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\loader.py", line 97, in render_to_string
+    return template.render(context, request)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\backends\django.py", line 95, in render
+    return self.template.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 206, in render
+    return self._render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\defaulttags.py", line 513, in render
+    six.reraise(*exc_info)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\defaulttags.py", line 499, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+NoReverseMatch: Reverse for 'add_staff' with arguments '(u'\u6240\u6709',)' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+2017-03-27 23:34:23,418 [Thread-24:11728] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /index/
+Traceback (most recent call last):
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\utils\decorators.py", line 67, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\utils\decorators.py", line 63, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "D:/python_env/dssms\utils\mixin_utils.py", line 10, in dispatch
+    return super(LoginRequiredMixin, self).dispatch(request, *args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\views\generic\base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:/python_env/dssms\operations\views.py", line 22, in get
+    return render(request, 'index.html', {})
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\loader.py", line 97, in render_to_string
+    return template.render(context, request)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\backends\django.py", line 95, in render
+    return self.template.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 206, in render
+    return self._render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\defaulttags.py", line 513, in render
+    six.reraise(*exc_info)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\defaulttags.py", line 499, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+NoReverseMatch: Reverse for 'add_staff' with arguments '(u'\u6240\u6709',)' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+2017-03-27 23:34:24,668 [Thread-25:12644] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /index/
+Traceback (most recent call last):
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\utils\decorators.py", line 67, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\utils\decorators.py", line 63, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "D:/python_env/dssms\utils\mixin_utils.py", line 10, in dispatch
+    return super(LoginRequiredMixin, self).dispatch(request, *args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\views\generic\base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:/python_env/dssms\operations\views.py", line 22, in get
+    return render(request, 'index.html', {})
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\loader.py", line 97, in render_to_string
+    return template.render(context, request)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\backends\django.py", line 95, in render
+    return self.template.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 206, in render
+    return self._render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\defaulttags.py", line 513, in render
+    six.reraise(*exc_info)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\defaulttags.py", line 499, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+NoReverseMatch: Reverse for 'add_staff' with arguments '(u'\u6240\u6709',)' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+2017-03-28 09:44:35,417 [Thread-8:10840] [django.request:182] [base:get_response] [WARNING]- Not Found: /favicon.ico
+2017-03-28 09:44:56,858 [Thread-13:612] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /index/add_staff/所有/
+Traceback (most recent call last):
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\views\generic\base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:/python_env/dssms\operations\views.py", line 150, in get
+    return render(request, 'add_staffs.html', {})
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\loader.py", line 97, in render_to_string
+    return template.render(context, request)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\backends\django.py", line 95, in render
+    return self.template.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 206, in render
+    return self._render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\loader_tags.py", line 173, in render
+    return compiled_parent._render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\loader_tags.py", line 69, in render
+    result = block.nodelist.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\defaulttags.py", line 513, in render
+    six.reraise(*exc_info)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\defaulttags.py", line 499, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+NoReverseMatch: Reverse for 'add_staff' with arguments '()' and keyword arguments '{}' not found. 1 pattern(s) tried: ['index/add_staff/(?P<value>.*)/']
+2017-03-28 23:51:10,503 [Thread-7:12364] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /index/staffs/所有/
+Traceback (most recent call last):
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\utils\decorators.py", line 67, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\utils\decorators.py", line 63, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "D:/python_env/dssms\utils\mixin_utils.py", line 10, in dispatch
+    return super(LoginRequiredMixin, self).dispatch(request, *args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\views\generic\base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:/python_env/dssms\operations\views.py", line 39, in get
+    return render(request, 'staffs.html', {'staffs': staffs, 'deptname': value, 'departments': departments})
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\loader.py", line 97, in render_to_string
+    return template.render(context, request)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\backends\django.py", line 95, in render
+    return self.template.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 206, in render
+    return self._render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\loader_tags.py", line 173, in render
+    return compiled_parent._render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\loader_tags.py", line 69, in render
+    result = block.nodelist.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\defaulttags.py", line 168, in render
+    len_values = len(values)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\models\query.py", line 240, in __len__
+    self._fetch_all()
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\models\query.py", line 1074, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\models\query.py", line 52, in __iter__
+    results = compiler.execute_sql()
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\models\sql\compiler.py", line 848, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\utils.py", line 95, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\backends\sqlite3\base.py", line 323, in execute
+    return Database.Cursor.execute(self, query, params)
+OperationalError: no such column: company_department.depart_level
+2017-03-28 23:52:00,891 [Thread-9:11712] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /index/staffs/所有/
+Traceback (most recent call last):
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\utils\decorators.py", line 67, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\utils\decorators.py", line 63, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "D:/python_env/dssms\utils\mixin_utils.py", line 10, in dispatch
+    return super(LoginRequiredMixin, self).dispatch(request, *args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\views\generic\base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:/python_env/dssms\operations\views.py", line 39, in get
+    return render(request, 'staffs.html', {'staffs': staffs, 'deptname': value, 'departments': departments})
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\loader.py", line 97, in render_to_string
+    return template.render(context, request)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\backends\django.py", line 95, in render
+    return self.template.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 206, in render
+    return self._render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\loader_tags.py", line 173, in render
+    return compiled_parent._render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\loader_tags.py", line 69, in render
+    result = block.nodelist.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\defaulttags.py", line 168, in render
+    len_values = len(values)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\models\query.py", line 240, in __len__
+    self._fetch_all()
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\models\query.py", line 1074, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\models\query.py", line 52, in __iter__
+    results = compiler.execute_sql()
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\models\sql\compiler.py", line 848, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\utils.py", line 95, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\backends\sqlite3\base.py", line 323, in execute
+    return Database.Cursor.execute(self, query, params)
+OperationalError: no such column: company_department.depart_level
+2017-03-28 23:52:02,970 [Thread-10:11696] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /index/staffs/所有/
+Traceback (most recent call last):
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\utils\decorators.py", line 67, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\utils\decorators.py", line 63, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "D:/python_env/dssms\utils\mixin_utils.py", line 10, in dispatch
+    return super(LoginRequiredMixin, self).dispatch(request, *args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\views\generic\base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:/python_env/dssms\operations\views.py", line 39, in get
+    return render(request, 'staffs.html', {'staffs': staffs, 'deptname': value, 'departments': departments})
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\loader.py", line 97, in render_to_string
+    return template.render(context, request)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\backends\django.py", line 95, in render
+    return self.template.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 206, in render
+    return self._render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\loader_tags.py", line 173, in render
+    return compiled_parent._render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\loader_tags.py", line 69, in render
+    result = block.nodelist.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\defaulttags.py", line 168, in render
+    len_values = len(values)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\models\query.py", line 240, in __len__
+    self._fetch_all()
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\models\query.py", line 1074, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\models\query.py", line 52, in __iter__
+    results = compiler.execute_sql()
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\models\sql\compiler.py", line 848, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\utils.py", line 95, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\backends\sqlite3\base.py", line 323, in execute
+    return Database.Cursor.execute(self, query, params)
+OperationalError: no such column: company_department.depart_level
+2017-03-28 23:54:32,680 [Thread-7:2944] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /index/staffs/所有/
+Traceback (most recent call last):
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\utils\decorators.py", line 67, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\utils\decorators.py", line 63, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "D:/python_env/dssms\utils\mixin_utils.py", line 10, in dispatch
+    return super(LoginRequiredMixin, self).dispatch(request, *args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\views\generic\base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:/python_env/dssms\operations\views.py", line 39, in get
+    return render(request, 'staffs.html', {'staffs': staffs, 'deptname': value, 'departments': departments})
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\loader.py", line 97, in render_to_string
+    return template.render(context, request)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\backends\django.py", line 95, in render
+    return self.template.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 206, in render
+    return self._render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\loader_tags.py", line 173, in render
+    return compiled_parent._render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\loader_tags.py", line 69, in render
+    result = block.nodelist.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\defaulttags.py", line 168, in render
+    len_values = len(values)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\models\query.py", line 240, in __len__
+    self._fetch_all()
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\models\query.py", line 1074, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\models\query.py", line 52, in __iter__
+    results = compiler.execute_sql()
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\models\sql\compiler.py", line 848, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\utils.py", line 95, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\backends\sqlite3\base.py", line 323, in execute
+    return Database.Cursor.execute(self, query, params)
+OperationalError: no such column: company_department.depart_level
+2017-03-28 23:54:34,970 [Thread-8:6236] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /index/staffs/所有/
+Traceback (most recent call last):
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\utils\decorators.py", line 67, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\utils\decorators.py", line 63, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "D:/python_env/dssms\utils\mixin_utils.py", line 10, in dispatch
+    return super(LoginRequiredMixin, self).dispatch(request, *args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\views\generic\base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:/python_env/dssms\operations\views.py", line 39, in get
+    return render(request, 'staffs.html', {'staffs': staffs, 'deptname': value, 'departments': departments})
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\loader.py", line 97, in render_to_string
+    return template.render(context, request)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\backends\django.py", line 95, in render
+    return self.template.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 206, in render
+    return self._render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\loader_tags.py", line 173, in render
+    return compiled_parent._render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\loader_tags.py", line 69, in render
+    result = block.nodelist.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\defaulttags.py", line 168, in render
+    len_values = len(values)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\models\query.py", line 240, in __len__
+    self._fetch_all()
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\models\query.py", line 1074, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\models\query.py", line 52, in __iter__
+    results = compiler.execute_sql()
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\models\sql\compiler.py", line 848, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\utils.py", line 95, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\backends\sqlite3\base.py", line 323, in execute
+    return Database.Cursor.execute(self, query, params)
+OperationalError: no such column: company_department.depart_level
+2017-03-29 01:00:46,015 [Thread-64:12256] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /index/staffs/所有/
+Traceback (most recent call last):
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\utils\decorators.py", line 67, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\utils\decorators.py", line 63, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "D:/python_env/dssms\utils\mixin_utils.py", line 10, in dispatch
+    return super(LoginRequiredMixin, self).dispatch(request, *args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\views\generic\base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:/python_env/dssms\operations\views.py", line 39, in get
+    return render(request, 'staffs.html', {'staffs': staffs, 'deptname': value, 'departments': departments})
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\loader.py", line 96, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\loader.py", line 32, in get_template
+    return engine.get_template(template_name, dirs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\backends\django.py", line 40, in get_template
+    return Template(self.engine.get_template(template_name, dirs), self)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\engine.py", line 190, in get_template
+    template, origin = self.find_template(template_name, dirs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\engine.py", line 157, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\loaders\base.py", line 46, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 189, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 231, in compile_nodelist
+    return parser.parse()
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 516, in parse
+    raise self.error(token, e)
+TemplateSyntaxError: Invalid block tag on line 67: 'request.user.staff.duty.department.department_name', expected 'empty' 或 'endfor'. Did you forget to register or load this tag?
+2017-03-29 01:00:46,648 [Thread-65:896] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /index/staffs/所有/
+Traceback (most recent call last):
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\utils\decorators.py", line 67, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\utils\decorators.py", line 63, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "D:/python_env/dssms\utils\mixin_utils.py", line 10, in dispatch
+    return super(LoginRequiredMixin, self).dispatch(request, *args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\views\generic\base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:/python_env/dssms\operations\views.py", line 39, in get
+    return render(request, 'staffs.html', {'staffs': staffs, 'deptname': value, 'departments': departments})
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\loader.py", line 96, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\loader.py", line 32, in get_template
+    return engine.get_template(template_name, dirs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\backends\django.py", line 40, in get_template
+    return Template(self.engine.get_template(template_name, dirs), self)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\engine.py", line 190, in get_template
+    template, origin = self.find_template(template_name, dirs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\engine.py", line 157, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\loaders\base.py", line 46, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 189, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 231, in compile_nodelist
+    return parser.parse()
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 516, in parse
+    raise self.error(token, e)
+TemplateSyntaxError: Invalid block tag on line 67: 'request.user.staff.duty.department.department_name', expected 'empty' 或 'endfor'. Did you forget to register or load this tag?
+2017-03-29 01:02:31,428 [Thread-74:5608] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /index/staffs/所有/
+Traceback (most recent call last):
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\utils\decorators.py", line 67, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\utils\decorators.py", line 63, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "D:/python_env/dssms\utils\mixin_utils.py", line 10, in dispatch
+    return super(LoginRequiredMixin, self).dispatch(request, *args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\views\generic\base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:/python_env/dssms\operations\views.py", line 39, in get
+    return render(request, 'staffs.html', {'staffs': staffs, 'deptname': value, 'departments': departments})
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\loader.py", line 96, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\loader.py", line 32, in get_template
+    return engine.get_template(template_name, dirs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\backends\django.py", line 40, in get_template
+    return Template(self.engine.get_template(template_name, dirs), self)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\engine.py", line 190, in get_template
+    template, origin = self.find_template(template_name, dirs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\engine.py", line 157, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\loaders\base.py", line 46, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 189, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 231, in compile_nodelist
+    return parser.parse()
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 516, in parse
+    raise self.error(token, e)
+TemplateSyntaxError: Invalid block tag on line 62: 'request.user.staff.duty.department.depart_level', expected 'elif'，'else' 或 'endif'. Did you forget to register or load this tag?
+2017-03-29 01:02:34,415 [Thread-75:3884] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /index/staffs/所有/
+Traceback (most recent call last):
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\utils\decorators.py", line 67, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\utils\decorators.py", line 63, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "D:/python_env/dssms\utils\mixin_utils.py", line 10, in dispatch
+    return super(LoginRequiredMixin, self).dispatch(request, *args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\views\generic\base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:/python_env/dssms\operations\views.py", line 39, in get
+    return render(request, 'staffs.html', {'staffs': staffs, 'deptname': value, 'departments': departments})
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\loader.py", line 96, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\loader.py", line 32, in get_template
+    return engine.get_template(template_name, dirs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\backends\django.py", line 40, in get_template
+    return Template(self.engine.get_template(template_name, dirs), self)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\engine.py", line 190, in get_template
+    template, origin = self.find_template(template_name, dirs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\engine.py", line 157, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\loaders\base.py", line 46, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 189, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 231, in compile_nodelist
+    return parser.parse()
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 516, in parse
+    raise self.error(token, e)
+TemplateSyntaxError: Invalid block tag on line 62: 'request.user.staff.duty.department.depart_level', expected 'elif'，'else' 或 'endif'. Did you forget to register or load this tag?
+2017-03-29 21:59:25,009 [Thread-17:2892] [django.request:182] [base:get_response] [WARNING]- Not Found: /favicon.ico
+2017-03-29 22:15:37,933 [Thread-7:1536] [django.request:182] [base:get_response] [WARNING]- Not Found: /index/departs_dutys/
+2017-03-29 22:15:59,421 [Thread-13:8024] [django.request:182] [base:get_response] [WARNING]- Not Found: /index/departs_dutys/
+2017-03-29 23:31:23,546 [Thread-16:7572] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /index/departs/
+Traceback (most recent call last):
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\views\generic\base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:/python_env/dssms\operations\views.py", line 126, in get
+    return render(request, 'depts_dutys.html', {"departs": departs})
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\loader.py", line 96, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\loader.py", line 32, in get_template
+    return engine.get_template(template_name, dirs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\backends\django.py", line 40, in get_template
+    return Template(self.engine.get_template(template_name, dirs), self)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\engine.py", line 190, in get_template
+    template, origin = self.find_template(template_name, dirs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\engine.py", line 157, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\loaders\base.py", line 46, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 189, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 231, in compile_nodelist
+    return parser.parse()
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 516, in parse
+    raise self.error(token, e)
+TemplateSyntaxError: Empty variable tag on line 35
+2017-03-30 14:33:25,095 [Thread-8:4132] [django.request:182] [base:get_response] [WARNING]- Not Found: /favicon.ico
+2017-03-30 14:33:29,431 [Thread-11:5456] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /index/departs/
+Traceback (most recent call last):
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\views\generic\base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:/python_env/dssms\operations\views.py", line 126, in get
+    return render(request, 'depts_dutys.html', {"departs": departs})
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\loader.py", line 97, in render_to_string
+    return template.render(context, request)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\backends\django.py", line 95, in render
+    return self.template.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 206, in render
+    return self._render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\loader_tags.py", line 173, in render
+    return compiled_parent._render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\loader_tags.py", line 69, in render
+    result = block.nodelist.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\defaulttags.py", line 513, in render
+    six.reraise(*exc_info)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\defaulttags.py", line 499, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+NoReverseMatch: Reverse for 'depart_duty' with arguments '()' and keyword arguments '{}' not found. 1 pattern(s) tried: ['index/depart_duty/(?P<value>.*)/']
+2017-03-30 14:33:52,134 [Thread-13:10500] [django.request:103] [csrf:_reject] [WARNING]- Forbidden (CSRF token missing or incorrect.): /index/depart_duty/?/
+2017-03-30 14:33:54,533 [Thread-14:13208] [django.request:103] [csrf:_reject] [WARNING]- Forbidden (CSRF token missing or incorrect.): /index/depart_duty/?/
+2017-03-30 14:35:56,098 [Thread-18:6708] [django.request:103] [csrf:_reject] [WARNING]- Forbidden (CSRF token missing or incorrect.): /index/depart_duty/?/
+2017-03-30 14:35:58,325 [Thread-19:7692] [django.request:103] [csrf:_reject] [WARNING]- Forbidden (CSRF token missing or incorrect.): /index/depart_duty/?/
+2017-03-30 14:36:31,917 [Thread-21:10252] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /index/depart_duty/?/
+Traceback (most recent call last):
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\utils\decorators.py", line 67, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\utils\decorators.py", line 63, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "D:/python_env/dssms\utils\mixin_utils.py", line 10, in dispatch
+    return super(LoginRequiredMixin, self).dispatch(request, *args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\views\generic\base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:/python_env/dssms\operations\views.py", line 94, in post
+    duty.department = depart
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\models\fields\related_descriptors.py", line 199, in __set__
+    (instance._meta.object_name, self.field.name)
+ValueError: Cannot assign None: "Duty.department" does not allow null values.
+2017-03-30 14:36:34,556 [Thread-23:10764] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /index/depart_duty/?/
+Traceback (most recent call last):
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\utils\decorators.py", line 67, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\utils\decorators.py", line 63, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "D:/python_env/dssms\utils\mixin_utils.py", line 10, in dispatch
+    return super(LoginRequiredMixin, self).dispatch(request, *args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\views\generic\base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:/python_env/dssms\operations\views.py", line 94, in post
+    duty.department = depart
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\models\fields\related_descriptors.py", line 199, in __set__
+    (instance._meta.object_name, self.field.name)
+ValueError: Cannot assign None: "Duty.department" does not allow null values.
+2017-03-30 14:39:44,513 [Thread-55:3828] [django.request:103] [csrf:_reject] [WARNING]- Forbidden (CSRF token missing or incorrect.): /index/departs/
+2017-03-30 14:40:00,697 [Thread-60:11276] [django.request:103] [csrf:_reject] [WARNING]- Forbidden (CSRF token missing or incorrect.): /index/departs/
+2017-03-30 14:40:27,502 [Thread-64:9236] [django.request:103] [csrf:_reject] [WARNING]- Forbidden (CSRF token missing or incorrect.): /index/departs/
+2017-03-30 15:03:35,704 [Thread-7:1128] [django.request:103] [csrf:_reject] [WARNING]- Forbidden (CSRF token missing or incorrect.): /index/departs/
+2017-03-30 15:03:40,584 [Thread-9:6180] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /index/departs/
+Traceback (most recent call last):
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\handlers\base.py", line 158, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view operations.views.DepartsView didn't return an HttpResponse object. It returned None instead.
+2017-03-30 15:03:54,556 [Thread-14:6072] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /index/departs/
+Traceback (most recent call last):
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\handlers\base.py", line 158, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view operations.views.DepartsView didn't return an HttpResponse object. It returned None instead.
+2017-03-30 15:04:19,562 [Thread-15:4492] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /index/departs/
+Traceback (most recent call last):
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\handlers\base.py", line 158, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view operations.views.DepartsView didn't return an HttpResponse object. It returned None instead.
+2017-03-30 16:24:48,009 [Thread-8:6168] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /index/departs/
+Traceback (most recent call last):
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\views\generic\base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:/python_env/dssms\operations\views.py", line 126, in get
+    return render(request, 'depts_dutys.html', {"departs": departs})
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\loader.py", line 97, in render_to_string
+    return template.render(context, request)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\backends\django.py", line 95, in render
+    return self.template.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 206, in render
+    return self._render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\loader_tags.py", line 173, in render
+    return compiled_parent._render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\loader_tags.py", line 69, in render
+    result = block.nodelist.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\defaulttags.py", line 220, in render
+    nodelist.append(node.render_annotated(context))
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\defaulttags.py", line 326, in render
+    return nodelist.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\defaulttags.py", line 293, in render
+    return self.nodelist_true.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\defaulttags.py", line 513, in render
+    six.reraise(*exc_info)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\defaulttags.py", line 499, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+NoReverseMatch: Reverse for 'departs' with arguments '(u'{{ page }}',)' and keyword arguments '{}' not found. 1 pattern(s) tried: ['index/departs/']
+2017-03-30 16:24:59,677 [Thread-9:11360] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /index/departs/
+Traceback (most recent call last):
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\views\generic\base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:/python_env/dssms\operations\views.py", line 126, in get
+    return render(request, 'depts_dutys.html', {"departs": departs})
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\loader.py", line 96, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\loader.py", line 32, in get_template
+    return engine.get_template(template_name, dirs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\backends\django.py", line 40, in get_template
+    return Template(self.engine.get_template(template_name, dirs), self)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\engine.py", line 190, in get_template
+    template, origin = self.find_template(template_name, dirs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\engine.py", line 157, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\loaders\base.py", line 46, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 189, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 231, in compile_nodelist
+    return parser.parse()
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 516, in parse
+    raise self.error(token, e)
+TemplateSyntaxError: Could not parse the remainder: '{{' from '{{'
+2017-03-30 16:25:08,474 [Thread-10:9536] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /index/departs/
+Traceback (most recent call last):
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\views\generic\base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:/python_env/dssms\operations\views.py", line 126, in get
+    return render(request, 'depts_dutys.html', {"departs": departs})
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\loader.py", line 97, in render_to_string
+    return template.render(context, request)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\backends\django.py", line 95, in render
+    return self.template.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 206, in render
+    return self._render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\loader_tags.py", line 173, in render
+    return compiled_parent._render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\loader_tags.py", line 69, in render
+    result = block.nodelist.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\defaulttags.py", line 220, in render
+    nodelist.append(node.render_annotated(context))
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\defaulttags.py", line 326, in render
+    return nodelist.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\defaulttags.py", line 293, in render
+    return self.nodelist_true.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\defaulttags.py", line 513, in render
+    six.reraise(*exc_info)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\defaulttags.py", line 499, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+NoReverseMatch: Reverse for 'departs' with arguments '(1,)' and keyword arguments '{}' not found. 1 pattern(s) tried: ['index/departs/']
+2017-03-30 16:25:10,256 [Thread-11:10084] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /index/departs/
+Traceback (most recent call last):
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\views\generic\base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:/python_env/dssms\operations\views.py", line 126, in get
+    return render(request, 'depts_dutys.html', {"departs": departs})
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\loader.py", line 97, in render_to_string
+    return template.render(context, request)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\backends\django.py", line 95, in render
+    return self.template.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 206, in render
+    return self._render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\loader_tags.py", line 173, in render
+    return compiled_parent._render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\loader_tags.py", line 69, in render
+    result = block.nodelist.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\defaulttags.py", line 220, in render
+    nodelist.append(node.render_annotated(context))
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\defaulttags.py", line 326, in render
+    return nodelist.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\defaulttags.py", line 293, in render
+    return self.nodelist_true.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\defaulttags.py", line 513, in render
+    six.reraise(*exc_info)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\defaulttags.py", line 499, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+NoReverseMatch: Reverse for 'departs' with arguments '(1,)' and keyword arguments '{}' not found. 1 pattern(s) tried: ['index/departs/']
+2017-03-30 16:25:18,006 [Thread-12:11804] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /index/departs/
+Traceback (most recent call last):
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\views\generic\base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:/python_env/dssms\operations\views.py", line 126, in get
+    return render(request, 'depts_dutys.html', {"departs": departs})
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\loader.py", line 97, in render_to_string
+    return template.render(context, request)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\backends\django.py", line 95, in render
+    return self.template.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 206, in render
+    return self._render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\loader_tags.py", line 173, in render
+    return compiled_parent._render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 197, in _render
+    return self.nodelist.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\loader_tags.py", line 69, in render
+    result = block.nodelist.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\defaulttags.py", line 220, in render
+    nodelist.append(node.render_annotated(context))
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\defaulttags.py", line 326, in render
+    return nodelist.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\defaulttags.py", line 293, in render
+    return self.nodelist_true.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 992, in render
+    bit = node.render_annotated(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\base.py", line 959, in render_annotated
+    return self.render(context)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\defaulttags.py", line 513, in render
+    six.reraise(*exc_info)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\template\defaulttags.py", line 499, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\urlresolvers.py", line 600, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\urlresolvers.py", line 508, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+NoReverseMatch: Reverse for 'departs' with arguments '(u'page',)' and keyword arguments '{}' not found. 1 pattern(s) tried: ['index/departs/']
+2017-03-30 21:53:36,051 [Thread-8:11948] [django.request:182] [base:get_response] [WARNING]- Not Found: /favicon.ico
+2017-03-31 10:36:18,743 [Thread-8:7700] [django.request:182] [base:get_response] [WARNING]- Not Found: /favicon.ico
+2017-03-31 10:50:19,273 [Thread-9:4680] [django.request:182] [base:get_response] [WARNING]- Not Found: /index/dept_detail/领导/
+2017-04-01 09:59:10,848 [Thread-10:1316] [django.request:182] [base:get_response] [WARNING]- Not Found: /favicon.ico
+2017-04-01 10:11:43,256 [Thread-32:3128] [django.request:94] [base:http_method_not_allowed] [WARNING]- Method Not Allowed (POST): /index/dept_detail/?/
+2017-04-01 10:11:45,598 [Thread-33:4220] [django.request:94] [base:http_method_not_allowed] [WARNING]- Method Not Allowed (POST): /index/dept_detail/?/
+2017-04-01 10:12:40,058 [Thread-40:7892] [django.request:94] [base:http_method_not_allowed] [WARNING]- Method Not Allowed (POST): /index/dept_detail/?/
+2017-04-01 11:11:49,559 [Thread-8:6072] [django.request:182] [base:get_response] [WARNING]- Not Found: /favicon.ico
+2017-04-01 11:16:51,418 [Thread-80:3952] [django.request:182] [base:get_response] [WARNING]- Not Found: /index/depts_detail/管理/
+2017-04-01 11:17:05,723 [Thread-81:7000] [django.request:182] [base:get_response] [WARNING]- Not Found: /index/depts_detail/管理/
+2017-04-05 09:55:16,055 [Thread-17:5900] [django.request:182] [base:get_response] [WARNING]- Not Found: /favicon.ico
+2017-04-05 16:47:24,476 [Thread-8:8828] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /project/
+Traceback (most recent call last):
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\views\generic\base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:\python_env\dssms\apps\project\views.py", line 23, in get
+    projects = p.page(page)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\pure_pagination\paginator.py", line 49, in page
+    number = self.validate_number(number)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\pure_pagination\paginator.py", line 38, in validate_number
+    if number > self.num_pages:
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\pure_pagination\paginator.py", line 72, in _get_num_pages
+    if self.count == 0 and not self.allow_empty_first_page:
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\pure_pagination\paginator.py", line 60, in _get_count
+    self._count = self.object_list.count()
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\models\query.py", line 371, in count
+    return self.query.get_count(using=self.db)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\models\sql\query.py", line 483, in get_count
+    number = obj.get_aggregation(using, ['__count'])['__count']
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\models\sql\query.py", line 464, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\models\sql\compiler.py", line 848, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\utils.py", line 95, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\backends\sqlite3\base.py", line 323, in execute
+    return Database.Cursor.execute(self, query, params)
+OperationalError: no such table: project_project
+2017-04-05 16:51:06,479 [Thread-7:6136] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /project/
+Traceback (most recent call last):
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\views\generic\base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:\python_env\dssms\apps\project\views.py", line 18, in get
+    if all_project :
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\models\query.py", line 266, in __nonzero__
+    return type(self).__bool__(self)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\models\query.py", line 262, in __bool__
+    self._fetch_all()
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\models\query.py", line 1074, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\models\query.py", line 52, in __iter__
+    results = compiler.execute_sql()
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\models\sql\compiler.py", line 848, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\utils.py", line 95, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\backends\sqlite3\base.py", line 323, in execute
+    return Database.Cursor.execute(self, query, params)
+OperationalError: no such table: project_project
+2017-04-05 16:51:46,801 [Thread-7:1068] [django.request:284] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /project/
+Traceback (most recent call last):
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\handlers\base.py", line 149, in get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\core\handlers\base.py", line 147, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\views\generic\base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\views\generic\base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:\python_env\dssms\apps\project\views.py", line 24, in get
+    projects = p.page(page)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\pure_pagination\paginator.py", line 49, in page
+    number = self.validate_number(number)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\pure_pagination\paginator.py", line 38, in validate_number
+    if number > self.num_pages:
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\pure_pagination\paginator.py", line 72, in _get_num_pages
+    if self.count == 0 and not self.allow_empty_first_page:
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\pure_pagination\paginator.py", line 60, in _get_count
+    self._count = self.object_list.count()
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\models\query.py", line 371, in count
+    return self.query.get_count(using=self.db)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\models\sql\query.py", line 483, in get_count
+    number = obj.get_aggregation(using, ['__count'])['__count']
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\models\sql\query.py", line 464, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\models\sql\compiler.py", line 848, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\utils.py", line 95, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "D:\python_env\dssms_env_for_win\lib\site-packages\django\db\backends\sqlite3\base.py", line 323, in execute
+    return Database.Cursor.execute(self, query, params)
+OperationalError: no such table: project_project
+2017-04-05 23:32:09,601 [Thread-8:10728] [django.request:182] [base:get_response] [WARNING]- Not Found: /favicon.ico
+2017-04-07 20:07:19,329 [Thread-3:1344] [django.request:182] [base:get_response] [WARNING]- Not Found: /favicon.ico
+2017-04-07 20:07:20,707 [Thread-6:8504] [django.request:182] [base:get_response] [WARNING]- Not Found: /static/img/a1.jpg
+2017-04-07 20:07:20,710 [Thread-7:1740] [django.request:182] [base:get_response] [WARNING]- Not Found: /static/img/a2.jpg
+2017-04-07 20:07:20,710 [Thread-8:10460] [django.request:182] [base:get_response] [WARNING]- Not Found: /static/img/a3.jpg
+2017-04-07 20:07:20,713 [Thread-9:13160] [django.request:182] [base:get_response] [WARNING]- Not Found: /static/img/a4.jpg
+2017-04-07 20:07:20,713 [Thread-10:12808] [django.request:182] [base:get_response] [WARNING]- Not Found: /static/img/a5.jpg
+2017-04-07 20:07:20,717 [Thread-11:12924] [django.request:182] [base:get_response] [WARNING]- Not Found: /static/img/a6.jpg
+2017-04-07 20:07:20,727 [Thread-12:12188] [django.request:182] [base:get_response] [WARNING]- Not Found: /static/img/a7.jpg
+2017-04-07 20:07:20,729 [Thread-13:13000] [django.request:182] [base:get_response] [WARNING]- Not Found: /static/img/a8.jpg
+2017-04-07 20:07:23,779 [Thread-15:10080] [django.request:182] [base:get_response] [WARNING]- Not Found: /static/img/a1.jpg
+2017-04-07 20:07:23,780 [Thread-16:12888] [django.request:182] [base:get_response] [WARNING]- Not Found: /static/img/a2.jpg
+2017-04-07 20:07:23,782 [Thread-18:12940] [django.request:182] [base:get_response] [WARNING]- Not Found: /static/img/a4.jpg
+2017-04-07 20:07:23,782 [Thread-19:12948] [django.request:182] [base:get_response] [WARNING]- Not Found: /static/img/a5.jpg
+2017-04-07 20:07:23,782 [Thread-17:12928] [django.request:182] [base:get_response] [WARNING]- Not Found: /static/img/a3.jpg
+2017-04-07 20:07:23,785 [Thread-20:12912] [django.request:182] [base:get_response] [WARNING]- Not Found: /static/img/a6.jpg
+2017-04-07 20:07:23,796 [Thread-21:12944] [django.request:182] [base:get_response] [WARNING]- Not Found: /static/img/a7.jpg
+2017-04-07 20:07:23,798 [Thread-22:8840] [django.request:182] [base:get_response] [WARNING]- Not Found: /static/img/a8.jpg

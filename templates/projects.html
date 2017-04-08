@@ -1,0 +1,135 @@
+
+{% extends 'index.html' %}
+<!-- content -->
+
+{% block content %}
+
+    <div class="app-content-body">
+        <div>
+            <div class="col2 bg-light lter b-b wrapper-md">
+                <h1 class="m-n font-thin h3">工程信息</h1>
+            </div>
+        </div>
+        <div class="wrapper-md">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <table class="table table-hover" data-toggle="table">
+                                <thead>
+                                <tr>
+                                    <th class="text-center" style="width:20%">工程ID</th>
+                                    <th class="text-center" style="width:30%">工程负责人</th>
+                                    <th class="text-center" style="width:20%">开始时间</th>
+                                    <th class="text-center" style="width:20%">结束时间</th>
+                                    <th class="text-center" style="width:10%">操作</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for project in projects.object_list %}
+                                    <tr>
+                                        <td class="text-center">{{ project.project_id }}</td>
+                                        <td class="text-center">{{ project.head }}</td>
+                                        <td class="text-center">{{ project.start_date }}</td>
+                                        <td class="text-center">{{ project.end_date }}</td>
+                                        <td class="text-center"><button class="btn btn-xs btn-danger" name="{{ project.id }}">删除</button></td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                            <!-- 分页 -->
+                            <footer class="panel-footer">
+                                <div class="row">
+
+                                    <div class="col-sm-12 text-right text-center-xs">
+                                        <ul class="pagination pagination-sm m-t-none m-b-none">
+                                            {% if projects.has_previous %}
+                                                <li>
+                                                    <a href="?{{ project.previous_page_number.querystring }}">
+                                                        <i class="fa fa-chevron-left"></i>
+                                                    </a>
+                                                </li>
+                                            {% else %}
+                                                <li class="disabled">
+                                                    <a>
+                                                        <i class="fa fa-chevron-left"></i>
+                                                    </a>
+                                                </li>
+                                            {% endif %}
+
+                                            {% for page in projects.pages %}
+                                                {% if page %}
+                                                    {% ifequal page projects.number %}
+                                                        <li class="active">
+                                                            <a href="?{{ page.querystring }}">{{ page }}</a>
+                                                        </li>
+                                                    {% else %}
+                                                        <li>
+                                                            <a href="?{{ page.querystring }}">{{ page }}</a>
+                                                        </li>
+                                                    {% endifequal %}
+
+                                                {% endif %}
+                                            {% endfor %}
+
+                                            {% if project.has_next %}
+                                                <li>
+                                                    <a href="?{{ projects.next_page_number.querystring }}">
+                                                        <i class="fa fa-chevron-right"></i>
+                                                    </a>
+                                                </li>
+                                            {% else %}
+                                                <li class="disabled">
+                                                    <a>
+                                                        <i class="fa fa-chevron-right"></i>
+                                                    </a>
+                                                </li>
+                                            {% endif %}
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </footer>
+
+                        </div>
+                        <!-- / 分页 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
+
+{% block js %}
+    <script>
+        $(".btn-danger").click(function () {
+            var id = this.getAttribute("name");
+            $.ajax({
+                url:'{% url 'project_delete' %}',
+                type:"POST",
+                data:{id:id, csrfmiddlewaretoken:'{{ csrf_token }}'},
+                success: function (result) {
+                    if("success" == result.status) {
+                        swal({
+                                title: "操作成功",
+                                text: result.msg,
+                                type:"success",
+                                timer: 1000,
+                                showConfirmButton: false},
+                            function () {
+                                location.href = '{% url 'project_add' %}';
+                            }
+                        );
+                    }else{
+                        sweetAlert("失败", result.msg, "error");
+                    }
+                },
+                error: function (result) {
+                    sweetAlert("错误", result.msg, "error");
+                }
+            });
+        });
+    </script>
+{% endblock %}

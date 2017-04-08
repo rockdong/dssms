@@ -42,7 +42,9 @@ INSTALLED_APPS = [
     'xadmin',
     'crispy_forms',
     'company',
-    'utils'
+    'utils',
+    'operations',
+    'project',
 ]
 
 AUTH_USER_MODEL = 'company.Staff'
