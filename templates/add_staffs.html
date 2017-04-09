@@ -12,95 +12,101 @@
         <div class="bg-light lter b-b wrapper-md">
             <h1 class="m-n font-thin h3">人员录入</h1>
         </div>
-        <div class="panel panel-default">
-            <div class="panel-body">
-                {#                人员录入表单#}
-                <form class="form-horizontal" method="post" id="regist_form">
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label" for="input-id-1">姓名</label>
-                        <div class="col-sm-5">
-                            <input type="text" class="form-control" name="staff_name">
+        <div class="wrapper-md">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            {#                人员录入表单#}
+                            <form class="form-horizontal" method="post" id="regist_form">
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label" for="input-id-1">姓名</label>
+                                    <div class="col-sm-5">
+                                        <input type="text" class="form-control" name="staff_name">
+                                    </div>
+                                </div>
+                                <div class="line line-dashed b-b line-lg pull-in"></div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">性别</label>
+                                    <div class="col-sm-5">
+                                        <div id="sex" class="radio">
+                                            <label class="i-checks">
+                                                <input type="radio" name="sex" value="M">
+                                                <i></i>
+                                                男
+                                            </label>
+                                            <label class="i-checks">
+                                                <input type="radio" name="sex" value="F">
+                                                <i></i>
+                                                女
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="line line-dashed b-b line-lg pull-in"></div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label" for="input-id-1">生日</label>
+                                    <div class=" col-sm-5">
+                                        <div class="input-group date form_date">
+                                            <input type="text" class="form-control" name="birthday" readonly>
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="line line-dashed b-b line-lg pull-in"></div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label" for="input-id-1">电话</label>
+                                    <div class="col-sm-5">
+                                        <input type="text" class="form-control" name="phone">
+                                    </div>
+                                </div>
+                                <div class="line line-dashed b-b line-lg pull-in"></div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">部门选择</label>
+                                    <div class="col-sm-5">
+                                        <select name="department" id="department" class="form-control m-b" onchange="changeVal(this.value)">
+                                            {% for depart in departs %}
+                                                <option value="{{ depart.department_name }}">{{ depart.department_name }}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">职位选择</label>
+                                    <div class="col-sm-5">
+                                        <select name="duty_name" id="duty" class="form-control m-b">
+                                            {% for duty in dutys %}
+                                                <option value="{{ duty.duty_name }}">{{ duty.duty_name }}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="line line-dashed b-b line-lg pull-in"></div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label" for="input-id-1">登录账号</label>
+                                    <div class="col-sm-5">
+                                        <input type="text" class="form-control" name="username">
+                                    </div>
+                                </div>
+                                <div class="line line-dashed b-b line-lg pull-in"></div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">登录密码</label>
+                                    <div class="col-sm-5">
+                                        <input type="password" name="password" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="line line-dashed b-b line-lg pull-in"></div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label" for="input-id-1"></label>
+                                    <div class="col-sm-5 text-center">
+                                        <button class="btn btn-info btn-bg" id="add_staff" type="button">添加人员</button>
+                                    </div>
+                                </div>
+                                {% csrf_token %}
+                            </form>
                         </div>
                     </div>
-                    <div class="line line-dashed b-b line-lg pull-in"></div>
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">性别</label>
-                        <div class="col-sm-5">
-                            <div id="sex" class="radio">
-                                <label class="i-checks">
-                                    <input type="radio" name="sex" value="M">
-                                    <i></i>
-                                    男
-                                </label>
-                                <label class="i-checks">
-                                    <input type="radio" name="sex" value="F">
-                                    <i></i>
-                                    女
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="line line-dashed b-b line-lg pull-in"></div>
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label" for="input-id-1">生日</label>
-                        <div class=" col-sm-5">
-                            <div class="input-group date form_date">
-                                <input type="text" class="form-control" name="birthday" readonly>
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="line line-dashed b-b line-lg pull-in"></div>
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label" for="input-id-1">电话</label>
-                        <div class="col-sm-5">
-                            <input type="text" class="form-control" name="phone">
-                        </div>
-                    </div>
-                    <div class="line line-dashed b-b line-lg pull-in"></div>
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">部门选择</label>
-                        <div class="col-sm-5">
-                            <select name="department" id="department" class="form-control m-b" onchange="changeVal(this.value)">
-                                {% for depart in departs %}
-                                    <option value="{{ depart.department_name }}">{{ depart.department_name }}</option>
-                                {% endfor %}
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">职位选择</label>
-                        <div class="col-sm-5">
-                            <select name="duty_name" id="duty" class="form-control m-b">
-                                {% for duty in dutys %}
-                                    <option value="{{ duty.duty_name }}">{{ duty.duty_name }}</option>
-                                {% endfor %}
-                            </select>
-                        </div>
-                    </div>
-                    <div class="line line-dashed b-b line-lg pull-in"></div>
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label" for="input-id-1">登录账号</label>
-                        <div class="col-sm-5">
-                            <input type="text" class="form-control" name="username">
-                        </div>
-                    </div>
-                    <div class="line line-dashed b-b line-lg pull-in"></div>
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">登录密码</label>
-                        <div class="col-sm-5">
-                            <input type="password" name="password" class="form-control">
-                        </div>
-                    </div>
-                    <div class="line line-dashed b-b line-lg pull-in"></div>
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label" for="input-id-1"></label>
-                        <div class="col-sm-5 text-center">
-                            <button class="btn btn-info btn-bg" id="add_staff" type="button">添加人员</button>
-                        </div>
-                    </div>
-                    {% csrf_token %}
-                </form>
+                </div>
             </div>
         </div>
     </div>
@@ -162,14 +168,14 @@
                 success: function (result) {
                     if(result.status == "success") {
                         swal({
-                                title: "操作成功",
-                                text: result.msg,
-                                type:"success",
-                                timer: 2000,
-                                showConfirmButton: false},
-                            function () {
-                                location.href = '{% url 'add_staff' '所有' %}';
-                            }
+                                    title: "操作成功",
+                                    text: result.msg,
+                                    type:"success",
+                                    timer: 2000,
+                                    showConfirmButton: false},
+                                function () {
+                                    location.href = '{% url 'add_staff' '所有' %}';
+                                }
                         );
                     }else{
                         sweetAlert("操作失败", result.msg, "error");

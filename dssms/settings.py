@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'utils',
     'operations',
     'project',
+    'item',
 ]
 
 AUTH_USER_MODEL = 'company.Staff'

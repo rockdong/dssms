@@ -4051,3 +4051,4 @@ OperationalError: no such table: project_project
 2017-04-07 20:07:23,785 [Thread-20:12912] [django.request:182] [base:get_response] [WARNING]- Not Found: /static/img/a6.jpg
 2017-04-07 20:07:23,796 [Thread-21:12944] [django.request:182] [base:get_response] [WARNING]- Not Found: /static/img/a7.jpg
 2017-04-07 20:07:23,798 [Thread-22:8840] [django.request:182] [base:get_response] [WARNING]- Not Found: /static/img/a8.jpg
+2017-04-09 14:34:46,972 [Thread-19:123145432797184] [django.request:182] [base:get_response] [WARNING]- Not Found: /favicon.ico
